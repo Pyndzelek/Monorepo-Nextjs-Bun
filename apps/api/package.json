@@ -4,7 +4,8 @@
     "dev": "bun run --hot src/index.ts"
   },
   "dependencies": {
-    "hono": "^4.0.0",
-    "@repo/db": "workspace:*"
+    "@repo/db": "workspace:*",
+    "@repo/schemas": "workspace:*",
+    "hono": "^4.0.0"
   }
 }
