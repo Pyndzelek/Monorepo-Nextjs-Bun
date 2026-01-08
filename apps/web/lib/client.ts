@@ -1,5 +1,5 @@
 import { hc } from "hono/client";
-import type { AppType } from "api/src/index";
+import type { AppType } from "api/src/app";
 
 const apiUrl = process.env.NEXT_PUBLIC_API_URL;
 
