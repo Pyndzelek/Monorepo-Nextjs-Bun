@@ -4,10 +4,11 @@
     "dev": "bun run --hot src/index.ts"
   },
   "dependencies": {
-    "@hono/zod-validator": "^0.7.6",
+    "@hono/zod-validator": "0.4.2",
     "@repo/db": "workspace:*",
     "@repo/schemas": "workspace:*",
-    "hono": "^4.0.0"
+    "hono": "^4.0.0",
+    "zod": "3.24.1"
   },
   "devDependencies": {
     "@repo/tsconfig": "workspace:*",

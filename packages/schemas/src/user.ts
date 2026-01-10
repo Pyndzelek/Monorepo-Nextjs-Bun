@@ -1,20 +1,20 @@
 import { z } from "zod";
+import { createInsertSchema } from "drizzle-zod";
+import { users } from "@repo/db";
 
-export const UserSchema = z.object({
-  id: z.number().optional(),
-  email: z.string().email("Invalid email address"),
-  username: z.string().min(3, "Username must be at least 3 characters"),
-  password: z.string().min(8, "Password must be at least 8 characters"),
-  createdAt: z.date().optional(),
+const insertUserSchemaBase = createInsertSchema(users, {
+  name: z
+    .string()
+    .min(2, "Name must be at least 2 characters")
+    .max(50, "Name cannot exceed 50 characters"),
 });
 
-// POST Method schema for creating a new user
-export const CreateUserSchema = z.object({
-  email: z.string().email("Invalid email address"),
-  username: z.string().min(3, "Username must be at least 3 characters"),
-  password: z.string().min(8, "Password must be at least 8 characters"),
-});
+export const createUserSchema = insertUserSchemaBase.omit({ id: true });
+export const updateUserSchema = insertUserSchemaBase
+  .omit({ id: true })
+  .partial();
 
-// TypeScript types inferred from the schemas
-export type UserSchemaT = z.infer<typeof UserSchema>;
-export type CreateUserSchemaT = z.infer<typeof CreateUserSchema>;
+// Export the types
+export type User = typeof users.$inferSelect;
+export type CreateUser = z.infer<typeof createUserSchema>;
+export type UpdateUser = z.infer<typeof updateUserSchema>;
