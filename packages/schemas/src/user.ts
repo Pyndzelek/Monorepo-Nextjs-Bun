@@ -1,6 +1,6 @@
 import { z } from "zod";
 import { createInsertSchema } from "drizzle-zod";
-import { users } from "@repo/db";
+import { users } from "@repo/db/schema";
 
 const insertUserSchemaBase = createInsertSchema(users, {
   name: z
