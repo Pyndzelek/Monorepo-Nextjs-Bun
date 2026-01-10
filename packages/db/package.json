@@ -1,18 +1,31 @@
 {
   "name": "@repo/db",
+  "version": "0.0.0",
   "private": true,
+  "type": "module",
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "default": "./dist/index.js"
+    }
+  },
+  "files": [
+    "dist"
+  ],
   "scripts": {
+    "build": "tsc",
+    "dev": "tsc --watch",
+    "clean": "rm -rf dist .tsbuildinfo",
     "db:push": "drizzle-kit push",
     "db:generate": "drizzle-kit generate",
     "db:migrate": "bun src/migrate.ts",
     "db:studio": "drizzle-kit studio"
   },
-  "exports": {
-    ".": "./src/index.ts"
-  },
   "dependencies": {
-    "drizzle-orm": "^0.39.1",
-    "postgres": "^3.4.5"
+    "drizzle-orm": "0.39.3",
+    "postgres": "3.4.8"
   },
   "devDependencies": {
     "@repo/tsconfig": "workspace:*",

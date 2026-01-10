@@ -1,7 +1,13 @@
 {
   "name": "api",
+  "version": "0.0.0",
+  "private": true,
+  "type": "module",
   "scripts": {
-    "dev": "bun run --hot src/index.ts"
+    "dev": "bun run --hot src/index.ts",
+    "start": "bun src/index.ts",
+    "build": "bun build src/index.ts --outdir dist --target bun",
+    "clean": "rm -rf dist"
   },
   "dependencies": {
     "@hono/zod-validator": "0.4.2",
