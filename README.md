@@ -132,6 +132,11 @@ pnpm add lodash --filter api
 pnpm dlx shadcn@latest add card --cwd apps/web
 ```
 
+### How to fix the shared dependencies
+```bash
+pnpm dlx sherif@latest -f  
+```
+
 ### How to modify the Database
 
 Edit `packages/db/src/schema.ts`.  
