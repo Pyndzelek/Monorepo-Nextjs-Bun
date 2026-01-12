@@ -7,13 +7,5 @@
     "noEmit": true
   },
   "include": ["src/**/*"],
-  "exclude": ["node_modules", "dist"],
-  "references": [
-    {
-      "path": "../../packages/db"
-    },
-    {
-      "path": "../../packages/schemas"
-    }
-  ]
+  "exclude": ["node_modules", "dist"]
 }

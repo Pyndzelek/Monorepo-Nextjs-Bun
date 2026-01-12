@@ -12,7 +12,6 @@
   "dependencies": {
     "@hono/zod-validator": "0.4.2",
     "@repo/db": "workspace:*",
-    "@repo/schemas": "workspace:*",
     "hono": "^4.0.0",
     "zod": "3.24.1"
   },
